@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Meta settings and CSS for responsive popup styling -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Google Fonts for the interface -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/popup.css">
+
+  <title>Troubleshooting - Reddit Simplify</title>
+</head>
+
+
+<body>
+  <div id="container">
+    <div id="content">
+      <!-- HEADER SECTION: Logo, title, and mode/on-off switches -->
+      <div id="header-background">
+        <div id="header">
+          <div id="logo">
+            <a href="popup.html"> <svg class="back-arrow" title="Back" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.2426 6.34317L14.8284 4.92896L7.75739 12L14.8285 19.0711L16.2427 17.6569L10.5858 12L16.2426 6.34317Z" />
+              </svg>
+            </a>
+
+            <div class="header-title">Troubleshooting</div>
+          </div>
+          <div id="icons">
+            <!-- Master on/off switch for Reddit Simplify -->
+            <span>
+              <input type="checkbox" id="redd_on">
+              <label for="redd_on">
+                <!-- SVG power button icon -->
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 320C288 337.7 302.3 352 320 352C337.7 352 352 337.7 352 320L352 64zM210.3 162.4C224.8 152.3 228.3 132.3 218.2 117.8C208.1 103.3 188.1 99.8 173.6 109.9C107.4 156.1 64 233 64 320C64 461.4 178.6 576 320 576C461.4 576 576 461.4 576 320C576 233 532.6 156.1 466.3 109.9C451.8 99.8 431.9 103.3 421.7 117.8C411.5 132.3 415.1 152.2 429.6 162.4C479.4 197.2 511.9 254.8 511.9 320C511.9 426 425.9 512 319.9 512C213.9 512 128 426 128 320C128 254.8 160.5 197.1 210.3 162.4z" />
+                </svg>
+              </label>
+            </span>
+          </div>
+        </div>
+
+        <hr>
+
+      </div>
+
+
+
+
+      <!-- Contact information -->
+      <p>
+        Have a problem? First, please try restarting your browser. Then, reinstalling the extension.
+      </p>
+
+      <p>
+        If the problem persists, email me at
+        <a class="email-link" href="mailto:support@beetle.rodeo">Support@Beetle.Rodeo</a>.
+      </p>
+
+      <!-- Instructions to include in support email -->
+      <p>
+        I'd appreciate you including the following:<br>
+        - issue description<br>
+        - issue screenshot<br>
+        - version of Reddit Simplify: 1.0.5
+      </p>
+    </div>
+  </div>
+
+  <!-- Script for popup interactivity, if any -->
+  <script src="js/info-popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,413 @@
+/*--------------------
+  CSS VARIABLES
+--------------------*/
+:root {
+  --body: #ffffff;
+  --body-color: #000000;
+  --primary: #009687;
+  --secondary: #00796a;
+  --icon-color: var(--secondary);
+  --icon-background-hover: #80cbc3;
+  --divider-line: var(--secondary);
+  --check-off-border: #80cbc3;
+  --check-off-circle: #e0f2f1;
+  --check-on-background: var(--primary);
+  --check-on-circle: #b2dfdb;
+  --tree-switch: #bdbdbd;
+  --sub-list-accent: #dbdbdb;
+  --scrollbar: #99ccca;
+  --footer-links: var(--icon-color);
+  --footer-links-hover: var(--icon-background-hover);
+  --big-off: #96000f;
+  --big-off-hover: #b21720;
+  --email-link: var(--icon-color);
+  --email-link-hover: var(--icon-background-hover);
+}
+
+html[dark_mode=true] {
+  --body: #121212;
+  --body-color: #ffffff;
+  --icon-color: var(--primary);
+  --icon-background-hover: #80cbc3;
+  --divider-line: #3c6e71;
+  --check-off-border: #00695b;
+  --check-on-background: var(--secondary);
+  --tree-switch: #888;
+  --sub-list-accent: #555;
+  --scrollbar: #444;
+  --footer-links: #ccc;
+  --footer-links-hover: #80cbc3;
+  --big-off: var(--primary);
+  --big-off-hover: #80cbc3;
+}
+
+/*--------------------
+  GLOBAL STYLES
+--------------------*/
+body {
+  font-size: 1.125rem;
+  font-family: Inter, Arial, Helvetica Neue, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--body-color);
+  background: var(--body);
+}
+
+#container {
+  width: 20rem;
+  margin: auto;
+}
+
+/*--------------------
+  HEADER & FOOTER
+--------------------*/
+#content {
+  padding: .5rem 1rem 0;
+}
+
+#footer,
+#header,
+#header>div,
+#header label {
+  display: flex;
+  align-items: center;
+}
+
+#header {
+  justify-content: space-between;
+}
+
+.header-title {
+  font-weight: bold
+}
+
+#footer {
+  font-size: 1rem;
+  padding: .2rem;
+  justify-content: space-around;
+}
+
+.smallsvg {
+  height: 1.4rem;
+  width: 1.4rem;
+  fill: var(--footer-links);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  cursor: pointer;
+}
+
+.smallsvg:hover {
+  fill: var(--footer-links-hover);
+}
+
+.back-arrow {
+  height: 2rem;
+  width: 2rem;
+  fill: var(--primary);
+}
+
+#footer>a {
+  text-decoration: none;
+  color: var(--footer-links);
+}
+
+#footer>a:hover {
+  color: var(--footer-links-hover);
+}
+
+#logo {
+  font-size: 1.3rem;
+}
+
+#logo>img {
+  margin-right: .5rem;
+}
+
+#icons svg,
+#logo>img {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+#icons svg {
+  fill: var(--icon-color);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+
+#icons svg:hover {
+  cursor: pointer;
+  fill: var(--icon-background-hover);
+}
+
+#icons>* {
+  margin-left: .2rem;
+}
+
+/* Special email link style */
+.email-link {
+  text-decoration: none;
+  color: var(--email-link);
+}
+
+.email-link:hover {
+  color: var(--email-link-hover);
+}
+
+#info {
+  padding: 0 1.3rem .5rem;
+}
+
+/* Generic button styling */
+.button {
+  display: block;
+  border-radius: .3rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.button.reset {
+  background-color: var(--big-off);
+  color: #fff;
+  border: none;
+}
+
+.button.reset:hover {
+  background-color: var(--big-off-hover);
+  cursor: pointer;
+}
+
+
+/*--------------------
+  DIVIDERS
+--------------------*/
+hr {
+  border-width: 0;
+  background-color: var(--divider-line);
+  margin-bottom: 0;
+  margin-top: .4rem;
+  height: .2rem;
+}
+
+#footer-hr {
+  height: .2rem;
+  margin-top: 0;
+}
+
+/*--------------------
+  CHECKBOXES & TREE SWITCHES
+--------------------*/
+/* Hide default checkbox */
+input[type=checkbox] {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  position: relative;
+}
+
+#options>ul {
+  padding-left: .5rem;
+  margin-top: .625rem;
+  margin-bottom: .25rem;
+}
+
+#options label {
+  margin-bottom: .44rem;
+}
+
+.check~label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.check~label:before,
+.check~label:after,
+.tree-switch~label {
+  cursor: pointer;
+}
+
+.check~label:before {
+  content: "";
+  box-shadow: inset 0 0 0 .1rem var(--check-off-border);
+  border-radius: .6rem;
+  width: 1.9rem;
+  height: 1rem;
+  margin-right: .8rem;
+}
+
+#options .suboption .check~label:before,
+#options li>ul .check~label:before {
+  border-radius: .55rem;
+  width: 1.66rem;
+  height: .875rem;
+  margin-right: .7rem;
+}
+
+.check~label:after {
+  content: "";
+  position: absolute;
+  box-shadow: inset 0 0 0 .1rem var(--check-off-border);
+  background-color: var(--check-off-circle);
+  margin-left: .15rem;
+  border-radius: 50%;
+  transition: transform .15s ease-in-out;
+}
+
+#options .check~label:after {
+  width: .75rem;
+  height: .75rem;
+}
+
+#options .suboption .check~label:after,
+#options li>ul .check~label:after {
+  width: .63rem;
+  height: .63rem;
+}
+
+#container .check:checked~label:before {
+  box-shadow: none;
+  background-color: var(--check-on-background);
+}
+
+#container .check:checked~label:after {
+  box-shadow: none;
+  background-color: var(--check-on-circle);
+}
+
+#options .check:checked~label:after {
+  transform: translateX(.81rem);
+}
+
+#options .suboption .check:checked~label:after,
+#options li>ul .check:checked~label:after {
+  transform: translateX(.75rem);
+}
+
+#options .check:indeterminate~label:after {
+  transform: translateX(.4rem);
+}
+
+.suboption,
+li>ul {
+  padding-left: 1.06rem;
+}
+/* Layout for each section header */
+.check-tree {
+  display: flex;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+  padding: 0 .25rem 0 .25rem;
+}
+
+/* Left part (section text + master checkbox) stays inline */
+.check-tree > span:nth-child(1) {
+  display: flex;
+  align-items: center;
+  flex: 1; /* use remaining space */
+  min-width: 0; /* prevents weird overflow/wrapping */
+}
+
+/* Right part (the plus/minus toggle) sits at far right */
+.check-tree > span:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
+  width: .5rem;  /* consistent toggle box width */
+}
+
+/* Toggle box styling */
+.tree-switch + label {
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: .25rem;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.tree-switch + label:hover {
+  background: var(--check-off-circle);
+}
+
+/* Plus/minus symbol inside the toggle box */
+.tree-switch + label::after,
+.tree-switch + label::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--tree-switch);
+  transform: translate(-50%, -50%);
+  border-radius: .06rem;
+}
+.tree-switch + label::after {
+  width: .9rem;
+  height: .12rem;
+}
+.tree-switch + label::before {
+  width: .12rem;
+  height: .9rem;
+}
+/* Hide vertical bar when expanded (minus only) */
+.tree-switch:not(:checked) + label::before {
+  display: none;
+}
+
+/*--------------------
+  SCROLLBARS
+--------------------*/
+#options {
+  overflow-y: scroll;
+  height: 23rem;
+  padding: 0 1.2rem;
+  scrollbar-color: var(--scrollbar) var(--body);
+  scrollbar-width: thin;
+}
+
+/*--------------------
+  OFF STATE PANEL
+--------------------*/
+html[redd_on=false] .redd_hide,
+html[redd_on=true] #off {
+  display: none;
+}
+
+#off {
+  fill: var(--big-off);
+  height: 23rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#off svg:hover {
+  cursor: pointer;
+  fill: var(--big-off-hover);
+}
+
+/*--------------------
+  SUB-LIST INDICATOR (vertical line)
+--------------------*/
+li>ul:before {
+  content: "";
+  width: .2rem;
+  height: calc(100% - .2rem);
+  background-color: var(--sub-list-accent);
+  position: absolute;
+  left: .2rem;
+  top: -.125rem;
+}
+
+/*--------------------
+  HIDDEN CLASS
+--------------------*/
+.hidden {
+  display: none;
+}

@@ -1,0 +1,126 @@
+/* -------------------------------------
+   CSS VARIABLES: COLORS AND THEMING
+------------------------------------- */
+:root {
+  --body: #f8f8f8;
+  --body-color: #222;
+  --primary-blue: #3686e4;
+  --secondary-blue: #2862a6;
+  --link: #444;
+  --link-hover: #555;
+  --email-link: var(--primary-blue);
+  --email-link-hover: var(--secondary-blue);
+  --button-hover: #eee;
+  --first-button-color: #fff;
+}
+
+html[dark_mode=true] {
+  --body: #1c1c1c;
+  --body-color: #f8f8f8;
+  --link: #ddd;
+  --link-hover: #ccc;
+  --email-link: #609ee6;
+  --email-link-hover: #8eaed4;
+  --button-hover: #222;
+}
+
+/* -------------------------------------
+   PAGE/BODY LAYOUT
+------------------------------------- */
+body {
+  font-size: 1.125rem;
+  font-family: Lato, Arial, Helvetica Neue, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--body-color);
+  background: var(--body);
+}
+
+/* Container for the popup content */
+#container {
+  width: 22.7rem;
+  margin: auto;
+}
+
+/* -------------------------------------
+   LINKS AND EMAIL LINK STYLES
+------------------------------------- */
+/* General link styles */
+a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Special email link style */
+.email-link {
+  text-decoration: none;
+  color: var(--email-link);
+}
+
+.email-link:hover {
+  color: var(--email-link-hover);
+}
+
+/* -------------------------------------
+   MAIN CONTENT AND HEADER
+------------------------------------- */
+#info {
+  padding: 0 1.3rem .5rem;
+}
+
+/* Header "Back" link placement */
+header {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+/* -------------------------------------
+   TITLES AND BUTTONS
+------------------------------------- */
+/* Title styling */
+.title {
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+/* Generic button styling */
+.button {
+  display: block;
+  border-radius: .3rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+/* Button with border */
+.border-btn {
+  border: .15rem solid var(--primary-blue);
+}
+
+.border-btn:focus,
+.border-btn:hover {
+  background-color: var(--button-hover);
+}
+
+/* Solid button style */
+.full-btn {
+  background-color: var(--primary-blue);
+  color: var(--first-button-color);
+}
+
+.full-btn:focus,
+.full-btn:hover {
+  box-shadow: 0 0 .5rem var(--primary-blue);
+  color: var(--first-button-color);
+}
+
+/* -------------------------------------
+   DONATE BUTTONS CONTAINER
+------------------------------------- */
+#donate-btns {
+  margin-bottom: .75rem;
+}

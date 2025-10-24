@@ -1,0 +1,46 @@
+/* ----------------------------------------
+   Reddit Hider CSS for "Reddit Simplify" Extension
+   - All selectors use html[hide_*] attributes
+   - Hides, adjusts, or fixes layout for Reddit elements
+   - Uses !important to override inline/page styles
+---------------------------------------- */
+
+/* Hide Reddit UI elements */
+html[hide_header=true] reddit-header-large,
+html[hide_nav_bar=true] flex-left-nav-container,
+html[hide_nav_new_user=true] [source="xpromo"],
+html[hide_sidebar_contents=true] .right-sidebar,
+html[hide_share_button=true] .share-dropdown-menu,
+html[hide_post_avatar=true] .avatar,
+html[hide_comment_search_sort=true] comment-body-header,
+html[hide_comment_avatar=true] [slot="commentAvatar"],
+html[hide_comment_react=true] shreddit-comment-action-row,
+html[hide_comment_age=true] faceplate-timeago,
+html[hide_award=true] award-button,
+html[hide_promoted=true] .promotedlink,
+html[hide_auto_search=true] search-telemetry-tracker svg,
+html[hide_trending_topics="true"] .masthead:has(shreddit-gallery-carousel),
+html[hide_trending_topics="true"] li:has(faceplate-tracker[noun="trending"]),
+html[hide_app_nags="true"] aside:has(faceplate-tracker[source="xpromo"]),
+html[hide_promo_modules="true"] #right-rail-experience-root[aria-label="Promotion"],
+html[hide_promo_modules="true"] aside[aria-label="Promotion"],
+html[hide_recirc_modules="true"] [slot="recommendation-bar"],
+html[hide_create_post_box="true"] div:has(> a[href^="/submit"]),
+html[hide_create_post_box="true"] a[href^="/submit"],
+html[hide_community_spotlights="true"] .community-list,
+html[hide_happening_now="true"] [aria-label="Happening Now"],
+html[hide_happening_now="true"] :is(section, aside, div)[class*="happening-now"],
+html[hide_geolocation="true"] [data-testid*="geo" i],
+html[hide_geolocation="true"] [aria-label*="near you" i] {
+  display: none !important;
+}
+
+/* Disable injected search links but keep the text */
+html[hide_auto_search=true] search-telemetry-tracker a[href^="/search/"],
+html[hide_auto_search=true] search-telemetry-tracker a[href^="https://www.reddit.com/search/"] {
+  pointer-events: none !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  color: inherit !important;
+  cursor: text !important;
+}
