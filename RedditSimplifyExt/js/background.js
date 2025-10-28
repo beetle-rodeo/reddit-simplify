@@ -106,12 +106,12 @@
   // On install, open welcome page
   api.runtime.onInstalled.addListener(({ reason }) => {
   if (reason === "install") {
-    api.tabs.create({ url: "https://beetle.rodeo" });
+    api.tabs.create({ url: "https://beetle.rodeo/projects/" });
   }
 });
 
 // Set uninstall survey page
-api.runtime.setUninstallURL("https://beetle.rodeo");
+api.runtime.setUninstallURL("https://beetle.rodeo/survey/");
 
 // Settings cache for fast lookup
 let state = {
